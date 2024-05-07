@@ -455,18 +455,49 @@
 //==========================================================================
 //==========================================================================
 //==========================================================================
-let play = document.querySelector(".play")
-let pause = document.querySelector(".pause")
-let video = document.querySelector('.video')
-let data = document.querySelector('.video-play')
-play.addEventListener('click', function () {
-    if (!play.classList.contains('video-play')) {
-        video.play()
-        play.classList.add('video-play')
-    }
-    else {
-        play.classList.remove('video-play')
-        video.pause()
+// let play = document.querySelector(".play")
+// let pause = document.querySelector(".pause")
+// let video = document.querySelector('.video')
+// let data = document.querySelector('.video-play')
+// let preloader = document.querySelector('.preloader');
+// window.addEventListener('load', function () {
+//     preloader.classList.add('preloader-hide')
+// })
+// play.addEventListener('click', function () {
+//     if (!play.classList.contains('video-play')) {
+//         video.play()
+//         play.classList.add('video-play')
+//     }
+//     else {
+//         play.classList.remove('video-play')
+//         video.pause()
 
-    }
-})
+//     }
+// })
+//==========================================================================
+//==========================================================================
+//==========================================================================
+// let btn = document.querySelectorAll('.tab-btn');
+// let tabs = document.querySelectorAll('.tab');
+
+
+// let tabHeader = document.querySelector('.tab-header');
+// tabHeader.addEventListener('click', function (e) {
+//     let id = e.target.dataset.id
+
+//     if (id) {
+//         btn.forEach(function (btn) {
+//             btn.classList.remove('active');
+//             e.target.classList.add('active');
+//         })
+//         tabs.forEach((val) => {
+//             val.classList.remove('show');
+//             console.log('sdfdsfdsfdsfds')
+//         })
+//         let element = document.getElementById(id);
+//         element.classList.add('show');
+//     }
+// })
+//==========================================================================
+//==========================================================================
+//==========================================================================
