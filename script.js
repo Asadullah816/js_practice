@@ -296,137 +296,137 @@
 //         img: "assets/images/6.jpg",
 //         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
 //     },
-//     {
-//         id: 3,
-//         title: "Egg Attack",
-//         category: "breakfast",
-//         price: 615.99,
-//         img: "assets/images/7.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 4,
-//         title: "Bacon Overflow",
-//         category: "lunch",
-//         price: 615.99,
-//         img: "assets/images/8.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 5,
-//         title: "Quarantine Buddy",
-//         category: "lunch",
-//         price: 615.99,
-//         img: "assets/images/9.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 6,
-//         title: "Steak Dinner",
-//         category: "dinner",
-//         price: 615.99,
-//         img: "assets/images/10.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 7,
-//         title: "American Classic",
-//         category: "shakes",
-//         price: 615.99,
-//         img: "assets/images/11.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 8,
-//         title: "Oreo Dream",
-//         category: "lunch",
-//         price: 615.99,
-//         img: "assets/images/12.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 9,
-//         title: "Country Delight",
-//         category: "breakfast",
-//         price: 615.99,
-//         img: "assets/images/13.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 10,
-//         title: "Diner Double",
-//         category: "lunch",
-//         price: 615.99,
-//         img: "assets/images/14.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 11,
-//         title: "Diner Double",
-//         category: "dinner",
-//         price: 615.99,
-//         img: "assets/images/f4.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-//     {
-//         id: 12,
-//         title: "Diner Double",
-//         category: "dinner",
-//         price: 615.99,
-//         img: "assets/images/food1.jpg",
-//         desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
-//     },
-// ]
-// let menuTitle = document.querySelector('.menu-title');
-// let menuPrice = document.querySelector('.menu-price');
-// let menuDesc = document.querySelector('.menu-desc');
-// let menuSrc = document.querySelector('.menu-img');
-// let container = document.querySelector('.cards')
+{
+    id: 3,
+        title: "Egg Attack",
+            category: "breakfast",
+                price: 615.99,
+                    img: "assets/images/7.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 4,
+        title: "Bacon Overflow",
+            category: "lunch",
+                price: 615.99,
+                    img: "assets/images/8.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 5,
+        title: "Quarantine Buddy",
+            category: "lunch",
+                price: 615.99,
+                    img: "assets/images/9.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 6,
+        title: "Steak Dinner",
+            category: "dinner",
+                price: 615.99,
+                    img: "assets/images/10.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 7,
+        title: "American Classic",
+            category: "shakes",
+                price: 615.99,
+                    img: "assets/images/11.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 8,
+        title: "Oreo Dream",
+            category: "lunch",
+                price: 615.99,
+                    img: "assets/images/12.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 9,
+        title: "Country Delight",
+            category: "breakfast",
+                price: 615.99,
+                    img: "assets/images/13.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 10,
+        title: "Diner Double",
+            category: "lunch",
+                price: 615.99,
+                    img: "assets/images/14.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 11,
+        title: "Diner Double",
+            category: "dinner",
+                price: 615.99,
+                    img: "assets/images/f4.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+{
+    id: 12,
+        title: "Diner Double",
+            category: "dinner",
+                price: 615.99,
+                    img: "assets/images/food1.jpg",
+                        desc: " Lorem  mpora numquam vel  quibusdam consectetur necessitatibus delectus nostrum excepturi at officia incidunt?"
+},
+]
+let menuTitle = document.querySelector('.menu-title');
+let menuPrice = document.querySelector('.menu-price');
+let menuDesc = document.querySelector('.menu-desc');
+let menuSrc = document.querySelector('.menu-img');
+let container = document.querySelector('.cards')
 
-// let filterBtn = document.querySelectorAll('.filter-btn');
-// filterBtn.forEach(function (btn) {
+let filterBtn = document.querySelectorAll('.filter-btn');
+filterBtn.forEach(function (btn) {
 
-//     btn.addEventListener('click', function () {
+    btn.addEventListener('click', function () {
 
-//         let filter = btn.dataset.id;
-//         let menuiItems = menu.filter(function (menus) {
-//             if (menus.category === filter) {
-//                 return menus;
-//             }
-//         })
-//         if (filter == "all") {
-//             dispalyMenus(menu);
-//         }
-//         else (
-//             dispalyMenus(menuiItems)
-//         )
-//     })
-// })
-// window.addEventListener("DOMContentLoaded", function () {
-//     dispalyMenus(menu);
-// });
-// function dispalyMenus(menuItems) {
-//     let display = menuItems.map(function (i) {
-//         return ` <div class="menu-card">
-//             <div class="menu_img">
-//                 <img class="menu-img" src="${i.img}" alt="">
-//             </div>
-//             <div class="card-content">
-//                 <div class="menu_title">
-//                     <p class="menu-title">${i.title}</p>
-//                 </div>
-//                 <div class="menu_price">
-//                     <p class="menu-price">${i.price}</p>
-//                 </div>
-//             </div>
-//             <div class="menu_desc">
-//                 <p class="menu-desc">${i.desc}</p>
-//             </div>
-//         </div>`
-//     })
-//     display = display.join("");
-//     container.innerHTML = display;
-// }
+        let filter = btn.dataset.id;
+        let menuiItems = menu.filter(function (menus) {
+            if (menus.category === filter) {
+                return menus;
+            }
+        })
+        if (filter == "all") {
+            dispalyMenus(menu);
+        }
+        else (
+            dispalyMenus(menuiItems)
+        )
+    })
+})
+window.addEventListener("DOMContentLoaded", function () {
+    dispalyMenus(menu);
+});
+function dispalyMenus(menuItems) {
+    let display = menuItems.map(function (i) {
+        return ` <div class="menu-card">
+            <div class="menu_img">
+                <img class="menu-img" src="${i.img}" alt="">
+            </div>
+            <div class="card-content">
+                <div class="menu_title">
+                    <p class="menu-title">${i.title}</p>
+                </div>
+                <div class="menu_price">
+                    <p class="menu-price">${i.price}</p>
+                </div>
+            </div>
+            <div class="menu_desc">
+                <p class="menu-desc">${i.desc}</p>
+            </div>
+        </div>`
+    })
+    display = display.join("");
+    container.innerHTML = display;
+}
 // ==========================================================================
 // ==========================================================================
 // ==========================================================================
@@ -501,3 +501,72 @@
 //==========================================================================
 //==========================================================================
 //==========================================================================
+// const navbar = document.querySelector('.navbar');
+// let navbarHeight = navbar.getBoundingClientRect().height;
+// window.addEventListener('scroll', function () {
+//     if (window.scrollY > navbarHeight) {
+//         navbar.classList.add('nav-fixed');
+//     }
+//     else {
+//         navbar.classList.remove('nav-fixed');
+//     }
+// })
+
+// let linksContainer = document.querySelector('.links-container');
+// let links = document.querySelector('.links');
+// let scrollLinks = document.querySelectorAll('.slide-link');
+// scrollLinks.forEach(function (data) {
+
+
+//     data.addEventListener('click', function (e) {
+//         scrollLinks.forEach(function (link) {
+//             link.classList.remove('active')
+//         })
+//         e.preventDefault();
+//         let id = e.target.getAttribute('href').slice(1);
+//         let element = document.getElementById(id);
+//         let position = element.offsetTop - navbarHeight;
+//         window.scrollTo({
+//             left: 0,
+//             top: position,
+//         })
+//         console.log(position)
+//         e.target.classList.add('active')
+//     })
+// })
+//==========================================================================
+//==========================================================================
+//==========================================================================
+let months = [
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december',
+]
+let weeklydays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+]
+let giveSection = document.querySelector('.giveaway h4');
+let date = new Date(2024, 5, 3, 2, 3, 4);
+let gyears = date.getFullYear();
+let gmonth = date.getMinutes();
+let gdays = date.getDay();
+let ghours = date.getHours();
+let gminutes = data.getMinutes();
+uu
+
+giveSection.textContent = `Giveaway On :  ${months[gmonth]} ${gyears} ${weeklydays[gdays]} ${ghours}:${gminutes}:`
