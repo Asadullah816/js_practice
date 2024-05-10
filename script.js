@@ -643,65 +643,98 @@
 // ================================================================
 // ============================ TO DO LIST ====================================
 // ================================================================
-let input = document.querySelector('.input');
-let listitems = document.querySelector('.list-items');
-let form = document.querySelector('.form');
-let del = document.querySelector('.span');
+// let input = document.querySelector('.input');
+// let listitems = document.querySelector('.list-items');
+// let form = document.querySelector('.form');
+// let del = document.querySelector('.span');
 
-function data() {
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        let value = input.value;
-        if (value == " " || value == "") {
-            alert("Plase Enter Some Thing", "danger");
-        }
-        else {
-            let li = document.createElement("li");
-            let div2 = document.createElement("div");
-            div2.setAttribute("class", 'li-div');
-            div2.innerHTML = value;
-            li.appendChild(div2)
-            let span = document.createElement("span");
-            span.setAttribute('class', 'delete');
-            span.innerHTML = "X";
-            let span2 = document.createElement("span")
-            span2.innerHTML = "+"
-            span2.setAttribute("class", "edit");
-            let div = document.createElement("div");
-            div.appendChild(span2)
-            div.appendChild(span)
-            li.appendChild(div)
-            listitems.appendChild(li);
-        }
-        input.value = "";
-        saveItem()
-    })
-}
-listitems.addEventListener('click', function (e) {
-    if (e.target.tagName == "LI") {
-        e.target.classList.toggle('checked');
-        saveItem()
-    } else if (e.target.classList == "delete") {
-        e.target.parentElement.parentElement.remove();
-        saveItem()
-    }
-    else if (e.target.classList == "edit") {
+// function data() {
+//     form.addEventListener('submit', function (e) {
+//         e.preventDefault();
+//         let value = input.value;
+//         if (value == " " || value == "") {
+//             alert("Plase Enter Some Thing", "danger");
+//         }
+//         else {
+//             let li = document.createElement("li");
+//             let div2 = document.createElement("div");
+//             div2.setAttribute("class", 'li-div');
+//             div2.innerHTML = value;
+//             li.appendChild(div2)
+//             let span = document.createElement("span");
+//             span.setAttribute('class', 'delete');
+//             span.innerHTML = "X";
+//             let span2 = document.createElement("span")
+//             span2.innerHTML = "+"
+//             span2.setAttribute("class", "edit");
+//             let div = document.createElement("div");
+//             div.appendChild(span2)
+//             div.appendChild(span)
+//             li.appendChild(div)
+//             listitems.appendChild(li);
+//         }
+//         input.value = "";
+//         saveItem()
+//     })
+// }
+// listitems.addEventListener('click', function (e) {
+//     if (e.target.tagName == "LI" || e.target.firstChild) {
+//         e.target.classList.toggle('checked');
+//         saveItem()
+//     } else if (e.target.classList == "delete") {
+//         e.target.parentElement.parentElement.remove();
+//         saveItem()
+//     }
+//     else if (e.target.classList == "edit") {
 
-        let innerData = e.target.parentElement.parentElement.firstChild.innerText;
-        input.value = innerData;
-        e.target.parentElement.parentElement.remove();
-        saveItem();
-    }
-});
+//         let innerData = e.target.parentElement.parentElement.firstChild.innerText;
+//         input.value = innerData;
+//         e.target.parentElement.parentElement.remove();
+//         saveItem();
+//     }
+// });
 
-function saveItem() {
-    localStorage.setItem("data", listitems.innerHTML);
-}
-function showData() {
-    listitems.innerHTML = localStorage.getItem("data");
-}
-data()
-showData()
+// function saveItem() {
+//     localStorage.setItem("data", listitems.innerHTML);
+// }
+// function showData() {
+//     listitems.innerHTML = localStorage.getItem("data");
+// }
+// data()
+// showData()
 // ================================================================================
 // ================================================================================
 // ================================================================================
+// let slider = document.querySelectorAll('.slide');
+// let nextBtn = document.querySelector('.next')
+// let prevBtn = document.querySelector('.prev')
+
+// slider.forEach(function (value, index) {
+//     value.style.left = `${index * 100}%`;
+// })
+// let counter = 0;
+// nextBtn.addEventListener('click', function () {
+//     counter++;
+//     carousel();
+// })
+// prevBtn.addEventListener('click', function () {
+//     counter--;
+//     carousel();
+// })
+
+// function carousel() {
+//     if (counter > slider.length - 1) {
+//         counter = slider.length - 1
+//     }
+//     else if (counter < 0) {
+//         counter = 0;
+//     }
+//     else {
+//         slider.forEach(function (value) {
+//             value.style.transform = `translateX(-${counter * 100}%)`;
+//         })
+//     }
+// }
+// =================================================================
+// =================================================================
+// =================================================================

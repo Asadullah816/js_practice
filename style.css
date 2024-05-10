@@ -311,7 +311,7 @@ h1 {
     align-items: center;
 }
 
-.input {
+/* .input {
     padding: 10px 20px;
     border-radius: 100px;
     border: none;
@@ -376,4 +376,52 @@ li::before {
     height: 10px;
     border-radius: 100px;
     background-image: url(assets/images/14.jpg);
+} */
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+/* .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
 }
+
+.slide {
+    width: 1200px;
+    margin: auto;
+    position: absolute;
+    transition: all .3s ease-in-out;
+} */
+
+/* .slide:nth-child(1) {
+    left: 0%;
+}
+
+.slide:nth-child(2) {
+    left: 100%;
+}
+
+.slide:nth-child(3) {
+    left: 200%;
+}
+
+.slide:nth-child(4) {
+    left: 300%;
+}
+
+.slide {
+    transform: translateX(0%);
+}
+
+*/
+/* img {
+    width: 100%;
+} */
+
+/* ================================================================ */
+/* ================================================================ */
+/* ================================================================ */
