@@ -309,6 +309,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* flex-direction: column; */
 }
 
 /* .input {
@@ -388,6 +389,7 @@ li::before {
     height: 800px;
     overflow: hidden;
     position: relative;
+    flex-direction: column;
 }
 
 .slide {
@@ -395,9 +397,9 @@ li::before {
     margin: auto;
     position: absolute;
     transition: all .3s ease-in-out;
-} */
+}
 
-/* .slide:nth-child(1) {
+.slide:nth-child(1) {
     left: 0%;
 }
 
@@ -417,11 +419,173 @@ li::before {
     transform: translateX(0%);
 }
 
-*/
-/* img {
+img {
     width: 100%;
-} */
+}
 
+.active {
+
+    background-color: black !important;
+}
+
+.slider-btn {
+    display: flex;
+    padding: 20px;
+    column-gap: 5px;
+}
+
+.slide-btn {
+    width: 10px;
+    height: 10px;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 100px;
+} */
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+/* .carousel {
+    width: 68%;
+    height: auto;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    display: flex;
+    justify-content: start;
+    column-gap: 40px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+
+scroll-snap-align: start;
+}
+
+.carousel.transition {
+    scroll-behavior: auto;
+}
+
+.carousel .dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.carousel .dragging .carousel-item {
+    cursor: grab;
+    user-select: none;
+}
+
+.arrowBtn {
+    cursor: pointer;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+*/
+/* .carousel-item:nth-child(1) {
+    left: 0px;
+}
+
+.carousel-item:nth-child(2) {
+    left: 30%;
+}
+
+.carousel-item:nth-child(3) {
+    left: 60%;
+}
+
+.carousel-item:nth-child(4) {
+    left: 90%;
+} */
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+/* .form {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
+    border-color: red;
+} */
 /* ================================================================ */
 /* ================================================================ */
 /* ================================================================ */
+body {
+    background-color: rgba(0, 0, 0, 0.459);
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    flex-direction: column;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    background-color: rgb(185, 185, 185);
+}
+
+.card-body button {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover:not([disabled]) {
+    background-color: gray;
+    color: white;
+}
+
+.btn:disabled {
+    cursor: no-drop;
+}
+
+.next-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.next {
+    padding: 10px 30px;
+    background-color: rgba(32, 32, 126, 0.781);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgba(32, 32, 126, 0.781);
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    display: none;
+}
+
+.next:hover {
+    transform: scale(110%);
+}
+
+.correct {
+    background-color: rgba(0, 128, 0, 0.438) !important;
+}
+
+.incorrect {
+    background-color: rgba(255, 0, 0, 0.301) !important;
+}

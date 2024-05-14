@@ -708,6 +708,7 @@
 // let slider = document.querySelectorAll('.slide');
 // let nextBtn = document.querySelector('.next')
 // let prevBtn = document.querySelector('.prev')
+// let sliderBtn = document.querySelectorAll('.slide-btn');
 
 // slider.forEach(function (value, index) {
 //     value.style.left = `${index * 100}%`;
@@ -732,9 +733,270 @@
 //     else {
 //         slider.forEach(function (value) {
 //             value.style.transform = `translateX(-${counter * 100}%)`;
+
 //         })
+//         sliderBtn.forEach(function (e) {
+//             e.classList.remove('active');
+//         })
+//         sliderBtn[counter].classList.add('active');
+
 //     }
 // }
 // =================================================================
 // =================================================================
 // =================================================================
+// let carousel = document.querySelector('.carousel');
+// let ItemWidth = document.querySelector('.carousel-item').offsetWidth;
+// let isDragging = false, startX, startScrolleft;
+// let arrowBtn = document.querySelectorAll('.arrowBtn');
+// let carouselChildren = [...carousel.children];
+// let itemPrevView = Math.round(carousel.offsetWidth / ItemWidth);
+
+// carouselChildren.slice(-itemPrevView).reverse().forEach(function (e) {
+//     carousel.insertAdjacentHTML("afterbegin", e.outerHTML);
+// })
+// carouselChildren.slice(0, itemPrevView).forEach(function (item) {
+//     carousel.insertAdjacentHTML("beforeEnd", item.outerHTML);
+// })
+// arrowBtn.forEach(function (btn) {
+//     btn.addEventListener('click', function () {
+//         carousel.scrollLeft += btn.id === 'prev' ? -ItemWidth : ItemWidth;
+//     })
+// })
+// let dragStart = (e) => {
+//     isDragging = true
+//     startX = e.pageX;
+//     carousel.classList.add('dragging');
+//     startScrolleft = carousel.scrollLeft;
+// }
+
+// let dragging = (e) => {
+//     if (!isDragging) return;
+//     carousel.scrollLeft = startScrolleft - (e.pageX - startX);
+// }
+// let dragStop = () => {
+//     isDragging = false
+//     carousel.classList.remove('dragging');
+// }
+// const autoPlay = () => {
+//     if (window.innerWidth < 800) return;
+//     timeoutId = setInterval(() => carousel.scrollLeft += ItemWidth, 2500);
+// }
+// autoPlay();
+// carousel.addEventListener('mousedown', dragStart);
+// carousel.addEventListener('mousemove', dragging);
+// document.addEventListener('mouseup', dragStop);
+
+// carousel.addEventListener("scroll", function () {
+//     if (carousel.scrollLeft === 0) {
+//         carousel.classList.add('transition');
+//         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+//         carousel.classList.remove('transition');
+//     }
+//     else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+//         carousel.classList.add('transition');
+//         carousel.scrollLeft = carousel.offsetWidth;
+//         carousel.classList.remove('transition');
+//     }
+// })
+// =========================================================================
+// =========================================================================
+// =========================================================================
+// let form = document.querySelector('.form');
+// let inputs = document.querySelectorAll('.input');
+// let div = document.querySelector('.input-div');
+// form.addEventListener('submit', function (e) {
+//     e.preventDefault()
+//     inputs.forEach(function (input) {
+//         if (input.value == "") {
+//             input.classList.add('error');
+//             let text = document.createElement("p");
+//             text.innerHTML = `${input.name} is required`
+//             input.append(text)
+//         }
+//         else {
+//             input.classList.remove('error');
+//         }
+//     })
+// })
+// ======================================================
+// ======================================================
+// ======================================================
+// let questions = [
+//     {
+//         question: "What is the capital of France?",
+//         answer: [
+//             {
+//                 text: "London",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Paris",
+//                 correct: true,
+//             },
+//             {
+//                 text: "Berlin",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Rome",
+//                 correct: false,
+//             }
+//         ]
+//     },
+//     {
+//         question: "Which of the following is the largest mammal?",
+//         answer: [
+//             {
+//                 text: "Elephant",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Blue Whale",
+//                 correct: true,
+//             },
+//             {
+//                 text: "Giraffe",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Hippopotamus",
+//                 correct: false,
+//             },
+//         ]
+//     },
+//     {
+//         question: "Who wrote the famous novel To Kill a Mockingbird?",
+//         answer: [
+//             {
+//                 text: "Harper Lee",
+//                 correct: true,
+//             },
+//             {
+//                 text: "F. Scott Fitzgerald",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Mark Twain",
+//                 correct: false,
+//             },
+//             {
+//                 text: " J.K. Rowling",
+//                 correct: false,
+//             },
+//         ]
+//     },
+//     {
+//         question: "What is the chemical symbol for gold?",
+//         answer: [
+//             {
+//                 text: "Au",
+//                 correct: true,
+//             },
+//             {
+//                 text: "Ag",
+//                 correct: false,
+//             },
+//             {
+//                 text: "Pt",
+//                 correct: false,
+//             },
+//             {
+//                 text: " Fe",
+//                 correct: false,
+//             },
+//         ]
+//     },
+//     {
+//         question: "In which year did the Titanic sink?",
+//         answer: [
+//             {
+//                 text: "1905",
+//                 correct: false,
+//             },
+//             {
+//                 text: "1921",
+//                 correct: false,
+//             },
+//             {
+//                 text: " 1912",
+//                 correct: true,
+//             },
+//             {
+//                 text: " 1933",
+//                 correct: false,
+//             },
+//         ]
+//     },
+// ];
+
+// let cardHead = document.querySelector('.card-title');
+// let cardBody = document.querySelector('.card-body');
+// let nextBtn = document.querySelector('.next');
+
+// let questionCount = 0;
+// let score = 0;
+
+// nextBtn.addEventListener('click', function (e) {
+//     if (questionCount < questions.length) {
+//         questionCount++;
+//         if (questionCount < questions.length) {
+//             showQuestion();
+//         }
+//     }
+//     if (questionCount === questions.length) {
+//         resetState();
+//         cardHead.innerHTML = "Quiz Finished";
+//         let result = document.createElement('h1');
+//         result.innerHTML = `You Correct Answers is ${score} out of ${questions.length}`
+//         cardHead.appendChild(result);
+//         nextBtn.innerHTML = "FINISH";
+//     }
+// })
+
+
+// function startQuizz() {
+//     questionCount = 0;
+//     score = 0;
+//     nextBtn.innerHTML = "NEXT";
+//     showQuestion();
+// }
+// function showQuestion() {
+//     resetState()
+//     let currentQuestion = questions[questionCount];
+//     let questionNo = questionCount + 1;
+//     cardHead.innerHTML = `Question ${questionNo}: ${currentQuestion.question}`;
+//     currentQuestion.answer.forEach(function (ans) {
+//         let btn = document.createElement('button');
+//         btn.innerText = ans.text;
+//         btn.setAttribute('class', 'btn');
+//         cardBody.appendChild(btn);
+//         if (ans.correct) {
+//             btn.dataset.correct = ans.correct;
+//         }
+//         btn.addEventListener('click', function (e) {
+//             if (e.target.dataset.correct === "true") {
+//                 score++;
+//                 btn.classList.add('correct');
+//             }
+//             else {
+//                 btn.classList.add('incorrect');
+//             }
+//             Array.from(cardBody.children).forEach(function (e) {
+//                 if (e.dataset.correct === "true") {
+//                     e.classList.add('correct');
+//                 }
+//                 e.disabled = true;
+//             })
+//             nextBtn.style.display = 'block'
+//         })
+//     })
+// }
+// function resetState() {
+//     nextBtn.style.display = "none";
+//     while (cardBody.firstChild) {
+//         cardBody.removeChild(cardBody.firstChild);
+//     }
+// }
+// startQuizz()
+
