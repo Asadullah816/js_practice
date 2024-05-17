@@ -1000,3 +1000,184 @@
 // }
 // startQuizz()
 
+// =======================================================
+// =======================================================
+// =======================================================
+let questions = [
+    {
+        question: "What is the capital of France?",
+        answer: [
+            {
+                text: "London",
+                correct: false,
+            },
+            {
+                text: "Paris",
+                correct: true,
+            },
+            {
+                text: "Berlin",
+                correct: false,
+            },
+            {
+                text: "Rome",
+                correct: false,
+            }
+        ]
+    },
+    {
+        question: "Which of the following is the largest mammal?",
+        answer: [
+            {
+                text: "Elephant",
+                correct: false,
+            },
+            {
+                text: "Blue Whale",
+                correct: true,
+            },
+            {
+                text: "Giraffe",
+                correct: false,
+            },
+            {
+                text: "Hippopotamus",
+                correct: false,
+            },
+        ]
+    },
+    {
+        question: "Who wrote the famous novel To Kill a Mockingbird?",
+        answer: [
+            {
+                text: "Harper Lee",
+                correct: true,
+            },
+            {
+                text: "F. Scott Fitzgerald",
+                correct: false,
+            },
+            {
+                text: "Mark Twain",
+                correct: false,
+            },
+            {
+                text: " J.K. Rowling",
+                correct: false,
+            },
+        ]
+    },
+    {
+        question: "What is the chemical symbol for gold?",
+        answer: [
+            {
+                text: "Au",
+                correct: true,
+            },
+            {
+                text: "Ag",
+                correct: false,
+            },
+            {
+                text: "Pt",
+                correct: false,
+            },
+            {
+                text: " Fe",
+                correct: false,
+            },
+        ]
+    },
+    {
+        question: "In which year did the Titanic sink?",
+        answer: [
+            {
+                text: "1905",
+                correct: false,
+            },
+            {
+                text: "1921",
+                correct: false,
+            },
+            {
+                text: " 1912",
+                correct: true,
+            },
+            {
+                text: " 1933",
+                correct: false,
+            },
+        ]
+    },
+];
+
+let cardHead = document.querySelector('.card-title');
+let cardBody = document.querySelector('.card-body');
+let nextBtn = document.querySelector('.next');
+
+
+let questionCount = 0;
+let score = 0;
+
+function startQuizz() {
+
+    questionCount = 0;
+    score = 0;
+    showQuizz();
+}
+function resetState() {
+    nextBtn.style.display = "none";
+    while (cardBody.firstChild) {
+        cardBody.removeChild(cardBody.firstChild);
+    }
+}
+function showQuizz() {
+    resetState();
+    let Currentquestion = questions[questionCount];
+    let questionNO = questionCount + 1;
+    cardHead.innerHTML = `Question ${questionNO}: ${Currentquestion.question}`;
+    Currentquestion.answer.forEach(function (data) {
+        let btn = document.createElement('button');
+        btn.classList.add('btn');
+        btn.innerHTML = data.text;
+        cardBody.appendChild(btn);
+        if (data.correct) {
+            btn.dataset.correct = data.correct;
+        }
+        btn.addEventListener('click', function (s) {
+            if (s.target.dataset.correct === "true") {
+                score++;
+                btn.classList.add('correct');
+            }
+            else {
+                btn.classList.add('incorrect');
+            }
+            Array.from(cardBody.children).forEach(function (e) {
+                if (e.dataset.correct === 'true') {
+                    e.classList.add('correct');
+                }
+                e.disabled = true;
+                nextBtn.style.display = "block"
+            })
+        })
+    })
+}
+nextBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (questionCount < questions.length) {
+        questionCount++;
+        if (questionCount < questions.length) {
+            showQuizz();
+        }
+    }
+    else if (questionCount == questions.length) {
+        resetState()
+        nextBtn.innerHTML = "FINISH"
+        cardHead.innerHTML = "Quizz finished"
+        let h1 = document.createElement("h1");
+        h1.innerText = ` Your Total score is ${score} out of ${questions.length}`;
+        cardBody.appendChild(h1);
+    }
+})
+
+startQuizz()
