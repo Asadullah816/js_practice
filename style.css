@@ -519,7 +519,7 @@ scroll-snap-align: start;
 /* ================================================================ */
 /* ================================================================ */
 /* ================================================================ */
-body {
+/* body {
     background-color: rgba(0, 0, 0, 0.459);
 }
 
@@ -588,4 +588,99 @@ body {
 
 .incorrect {
     background-color: rgba(255, 0, 0, 0.301) !important;
+} */
+
+/* ======================================================= */
+/* ======================================================= */
+/* ======================================================= */
+.container {
+    flex-direction: column;
+}
+
+/* table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.active {
+    background-color: rebeccapurple;
+} */
+/* ================================================================== */
+/* ================================================================== */
+/* ================================================================== */
+.img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.img-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.801);
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    flex-direction: column;
+}
+
+.image-view {
+    display: flex;
+}
+
+.cros-btn {
+    color: white;
+    cursor: pointer;
+    padding-left: 40px;
+}
+
+.images {
+    margin-top: 30px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.pre-img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid rgb(148, 143, 143);
+    opacity: .3;
+}
+
+.img-view {
+    transition: all .3s ease-in-out;
+    animation: img 1s linear;
+}
+
+@keyframes img {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.active {
+    opacity: 1;
+    border-color: white;
 }
