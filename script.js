@@ -1214,16 +1214,14 @@ let img = document.querySelectorAll('.img');
 let imgView = document.querySelector('.img-view');
 let imgContainer = document.querySelector('.img-container');
 let crossBtn = document.querySelector('.cros-btn');
+let next = document.querySelector('.next');
+let prev = document.querySelector('.prev');
+let idx
 let images = document.querySelector('.images');
-
-
-
-
 img.forEach(function (e, index) {
     let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
     // let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
     images.innerHTML += imgData;
-
     // console.log(images.children[index])
     e.addEventListener('click', function () {
         let preImg = document.querySelectorAll('.pre-img');
@@ -1249,13 +1247,61 @@ img.forEach(function (e, index) {
                     i.classList.remove('active');
                 })
             })
+            idx = index
             img.addEventListener('click', function (e) {
                 imgView.src = img.src;
                 e.target.classList.add('active')
             })
         })
-    })
+        next.addEventListener('click', function () {
+            preImg.forEach(function (e) {
+                e.classList.remove('active')
+            })
+
+            if (index < img.length - 1) {
+                index++
+                imgView.src = img[index].src;
+                images.children[index].classList.add('active');
+                console.log(img[index]);
+            } else {
+                images.children[0].classList.add('active');
+                index = 0
+                imgView.src = img[index].src;
+
+            }
+        })
+        prev.addEventListener('click', function () {
+            preImg.forEach(function (e) {
+                e.classList.remove('active')
+            })
+
+            if (index > 1) {
+                index--
+                imgView.src = img[index].src;
+                images.children[index].classList.add('active');
+                console.log(img[index]);
+            } else {
+                images.children[0].classList.add('active');
+                index = img.length
+                imgView.src = img[0].src;
+
+            }
+        })
+    });
+
+
 })
+
+let child = images.children;
+// for (let i in child) {
+//     console.log(child[i]);
+//     child[i].classList.remove('active');
+// }
+// if (index == img.length) {
+//     next.style.display = 'none';
+// }
+console.log(idx)
+
 crossBtn.addEventListener('click', function () {
     imgContainer.style.visibility = 'hidden';
 })
