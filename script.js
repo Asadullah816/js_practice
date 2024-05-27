@@ -1220,18 +1220,14 @@ let idx
 let images = document.querySelector('.images');
 img.forEach(function (e, index) {
     let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
-    // let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
     images.innerHTML += imgData;
-    // console.log(images.children[index])
     e.addEventListener('click', function () {
         let preImg = document.querySelectorAll('.pre-img');
         preImg.forEach(function (i) {
             i.classList.remove('active');
         })
     })
-    // images.children.forEach(function (i) {
-    //     i.classList.remove('active')
-    // })
+    // ===================== VISIBLE PAGE = MAIN CLICK ==================================
     e.addEventListener('click', function () {
         imgView.src = e.src;
         imgContainer.style.visibility = "visible";
@@ -1241,18 +1237,21 @@ img.forEach(function (e, index) {
             // images.children.classList.add('active');
         }
         let preImg = document.querySelectorAll('.pre-img')
-        preImg.forEach(function (img) {
+        preImg.forEach(function (img, idx2) {
             img.addEventListener('click', function () {
                 preImg.forEach(function (i) {
                     i.classList.remove('active');
                 })
             })
-            idx = index
+            // ============================= RANDOM CLICKS ============================
             img.addEventListener('click', function (e) {
                 imgView.src = img.src;
                 e.target.classList.add('active')
+                index = idx2;
             })
         })
+
+        // ======================== NEXT BTN  =============================
         next.addEventListener('click', function () {
             preImg.forEach(function (e) {
                 e.classList.remove('active')
@@ -1270,6 +1269,7 @@ img.forEach(function (e, index) {
 
             }
         })
+        // ======================= PREV BTN ===================================
         prev.addEventListener('click', function () {
             preImg.forEach(function (e) {
                 e.classList.remove('active')
@@ -1291,17 +1291,9 @@ img.forEach(function (e, index) {
 
 
 })
-
-let child = images.children;
-// for (let i in child) {
-//     console.log(child[i]);
-//     child[i].classList.remove('active');
-// }
-// if (index == img.length) {
-//     next.style.display = 'none';
-// }
-console.log(idx)
-
 crossBtn.addEventListener('click', function () {
     imgContainer.style.visibility = 'hidden';
 })
+// ================================================================
+// ======================== IMAGE GALLERY End =====================
+// ================================================================
