@@ -143,6 +143,7 @@
 //     if (value === reverse) {
 //         alert("The Text is palendrome");
 //     }
+
 //     else {
 //         alert("Not This text!!!");
 //     }
@@ -273,7 +274,6 @@
 //     let oldItems = localStorage.getItem(storageKey);
 //     if (oldItems) items = JSON.parse(oldItems);
 //     renderItem();
-
 // }
 // document.addEventListener('DOMContentLoaded', loadItem);
 // ==========================================================================
@@ -1210,90 +1210,194 @@
 // ================================================================
 // ======================== IMAGE GALLERY =========================
 // ================================================================
-let img = document.querySelectorAll('.img');
-let imgView = document.querySelector('.img-view');
-let imgContainer = document.querySelector('.img-container');
-let crossBtn = document.querySelector('.cros-btn');
-let next = document.querySelector('.next');
-let prev = document.querySelector('.prev');
-let idx
-let images = document.querySelector('.images');
-img.forEach(function (e, index) {
-    let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
-    images.innerHTML += imgData;
-    e.addEventListener('click', function () {
-        let preImg = document.querySelectorAll('.pre-img');
-        preImg.forEach(function (i) {
-            i.classList.remove('active');
-        })
-    })
-    // ===================== VISIBLE PAGE = MAIN CLICK ==================================
-    e.addEventListener('click', function () {
-        imgView.src = e.src;
-        imgContainer.style.visibility = "visible";
-        // console.log(images.children[index])
-        if (e.scr == imgData.src) {
-            images.children[index].classList.add('active')
-            // images.children.classList.add('active');
-        }
-        let preImg = document.querySelectorAll('.pre-img')
-        preImg.forEach(function (img, idx2) {
-            img.addEventListener('click', function () {
-                preImg.forEach(function (i) {
-                    i.classList.remove('active');
-                })
-            })
-            // ============================= RANDOM CLICKS ============================
-            img.addEventListener('click', function (e) {
-                imgView.src = img.src;
-                e.target.classList.add('active')
-                index = idx2;
-            })
-        })
+// let img = document.querySelectorAll('.img');
+// let imgView = document.querySelector('.img-view');
+// let imgContainer = document.querySelector('.img-container');
+// let crossBtn = document.querySelector('.cros-btn');
+// let next = document.querySelector('.next');
+// let prev = document.querySelector('.prev');
+// let idx
+// let images = document.querySelector('.images');
+// img.forEach(function (e, index) {
+//     let imgData = ` <img class="pre-img" src="${e.src}" alt="">`
+//     images.innerHTML += imgData;
+//     e.addEventListener('click', function () {
+//         let preImg = document.querySelectorAll('.pre-img');
+//         preImg.forEach(function (i) {
+//             i.classList.remove('active');
+//         })
+//     })
+//     // ===================== VISIBLE PAGE = MAIN CLICK ==================================
+//     e.addEventListener('click', function () {
+//         imgView.src = e.src;
+//         imgContainer.style.visibility = "visible";
+//         // console.log(images.children[index])
+//         if (e.scr == imgData.src) {
+//             images.children[index].classList.add('active')
+//             // images.children.classList.add('active');
+//         }
+//         let preImg = document.querySelectorAll('.pre-img')
+//         preImg.forEach(function (img, idx2) {
+//             img.addEventListener('click', function () {
+//                 preImg.forEach(function (i) {
+//                     i.classList.remove('active');
+//                 })
+//             })
+//             // ============================= RANDOM CLICKS ============================
+//             img.addEventListener('click', function (e) {
+//                 imgView.src = img.src;
+//                 e.target.classList.add('active')
+//                 index = idx2;
+//             })
+//         })
 
-        // ======================== NEXT BTN  =============================
-        next.addEventListener('click', function () {
-            preImg.forEach(function (e) {
-                e.classList.remove('active')
-            })
+//         // ======================== NEXT BTN  =============================
+//         next.addEventListener('click', function () {
+//             preImg.forEach(function (e) {
+//                 e.classList.remove('active')
+//             })
 
-            if (index < img.length - 1) {
-                index++
-                imgView.src = img[index].src;
-                images.children[index].classList.add('active');
-                console.log(img[index]);
-            } else {
-                images.children[0].classList.add('active');
-                index = 0
-                imgView.src = img[index].src;
+//             if (index < img.length - 1) {
+//                 index++
+//                 imgView.src = img[index].src;
+//                 images.children[index].classList.add('active');
+//                 console.log(img[index]);
+//             } else {
+//                 images.children[0].classList.add('active');
+//                 index = 0
+//                 imgView.src = img[index].src;
 
-            }
-        })
-        // ======================= PREV BTN ===================================
-        prev.addEventListener('click', function () {
-            preImg.forEach(function (e) {
-                e.classList.remove('active')
-            })
+//             }
+//         })
+//         // ======================= PREV BTN ===================================
+//         prev.addEventListener('click', function () {
+//             preImg.forEach(function (e) {
+//                 e.classList.remove('active')
+//             })
 
-            if (index > 1) {
-                index--
-                imgView.src = img[index].src;
-                images.children[index].classList.add('active');
-                console.log(img[index]);
-            } else {
-                images.children[0].classList.add('active');
-                index = img.length
-                imgView.src = img[0].src;
+//             if (index > 1) {
+//                 index--
+//                 imgView.src = img[index].src;
+//                 images.children[index].classList.add('active');
+//                 console.log(img[index]);
+//             } else {
+//                 images.children[0].classList.add('active');
+//                 index = img.length
+//                 imgView.src = img[0].src;
 
-            }
-        })
-    });
-
-
-})
-crossBtn.addEventListener('click', function () {
-    imgContainer.style.visibility = 'hidden';
-})
+//             }
+//         })
+//     });
+// })
+// crossBtn.addEventListener('click', function () {
+//     imgContainer.style.visibility = 'hidden';
+// })
 // ================================================================
 // ======================== IMAGE GALLERY End =====================
 // ================================================================
+// let cards = document.querySelectorAll('.card')
+// let observer = new IntersectionObserver(entries => {
+//     entries.forEach(function (ent) {
+//         ent.target.classList.toggle('show', ent.isIntersecting);
+//         if (ent.isIntersecting) observer.unobserve(ent.target)
+//     })
+// }, {
+//     threshold: 1,
+//     rootMargin: "200px",
+// })
+// cards.forEach(function (card) {
+//     observer.observe(card);
+// })
+// ====================================================================
+// ====================================================================
+// ====================================================================
+// const toast = document.querySelector('.toast');
+// const btn = document.querySelector('.btn');
+// const cross = document.querySelector('.cross');
+// const progress = document.querySelector('.progress')
+
+// btn.addEventListener('click', function () {
+//     toast.classList.add('show');
+//     progress.classList.add('active')
+//     setTimeout(() => {
+//         progress.classList.remove('active')
+//         toast.classList.remove('show');
+//     }, 5000);
+// })
+// cross.addEventListener('click', function () {
+//     progress.classList.remove('active')
+//     toast.classList.remove('show');
+// })
+// =====================================================================
+// =====================================================================
+// =====================================================================
+// const field = document.querySelectorAll('.field');
+// const input = document.querySelectorAll('.input');
+// const error = document.querySelectorAll('.error');
+// const form = document.querySelector('.form');
+// const pass = document.querySelector('#password');
+// const password = document.querySelector('.password-error');
+// const passwordconf = document.querySelector('.confirm-password-error');
+// const confpass = document.querySelector('#confirm-password');
+
+
+// form.addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     error.forEach(e => {
+//         // console.log(e)
+//         e.classList.remove('invalid')
+//     })
+//     console.log('jlkdsajflkdsajf')
+//     for (let i = 0; i < input.length; i++) {
+//         // console.log(input[i])
+//         if (input[i].value == "") {
+//             error[i].classList.add('invalid')
+//         }
+//     }
+//     if (pass.value.length < 8) {
+//         password.classList.add('invalid');
+//     }
+//     if (confpass.value != pass.value) {
+//         passwordconf.classList.add('invalid');
+//     }
+// })
+//
+// ====================================================================
+// ====================================================================
+// ====================================================================
+// let opn = document.querySelector('.span');
+// let selects = document.querySelector('.selects');
+// opn.addEventListener('click', () => {
+//     selects.classList.toggle('open');
+//     opn.classList.toggle('active')
+// })
+// ====================================================================
+// ====================================================================
+// ====================================================================
+let minute = document.querySelector('.minute');
+let second = document.querySelector(".second");
+let body = document.querySelector('.body');
+let hour = document.querySelector('.hour');
+let btn = document.querySelector('.btn');
+
+const timeFunction = () => {
+    let date = new Date();
+    let min = (date.getMinutes() / 60) * 360;
+    let sec = (date.getSeconds() / 60) * 360;
+    let hr = (date.getHours() / 12) * 360;
+    minute.style.transform = `rotate(${min}deg)`
+    second.style.transform = `rotate(${sec}deg)`
+    hour.style.transform = `rotate(${hr}deg)`
+}
+setInterval(timeFunction, 1000);
+btn.addEventListener('click', function () {
+    console.log('sfdsfd')
+    body.classList.toggle('dark')
+    if (btn.innerHTML == "Dark Mode") {
+        btn.innerHTML = "Light Mode"
+    }
+    else {
+        btn.innerHTML = "Dark Mode"
+    }
+})
+
