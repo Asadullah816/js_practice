@@ -309,6 +309,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     /* flex-direction: column; */
 }
 
@@ -845,7 +846,7 @@ tr:nth-child(even) {
 /* ====================================================== */
 /* ====================================================== */
 /* ====================================================== */
-:root {
+/* :root {
     --primary-color: black;
     --white-color: white;
     --shadow: rgba(0, 0, 0, 0.301)
@@ -855,7 +856,7 @@ tr:nth-child(even) {
     --primary-color: white;
     --white-color: black;
     --shadow: rgb(255 255 255 / 30%);
-    /* background-color: var(--whiite-color); */
+
 }
 
 .body {
@@ -948,9 +949,9 @@ tr:nth-child(even) {
     background-color: rgb(255, 0, 0);
     border-radius: 24px;
     /* transform: rotate(45deg); */
-    bottom: 0;
-    transform-origin: bottom;
-    z-index: 100;
+/* bottom: 0;
+transform-origin: bottom;
+z-index: 100;
 }
 
 .hour {
@@ -963,4 +964,265 @@ tr:nth-child(even) {
     bottom: 0;
     transform-origin: bottom;
     z-index: -1;
+}
+
+*/
+.body {
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+/* ====================================== */
+/* ====================================== */
+/* ====================================== */
+/* .body {
+    background-color: black;
+}
+
+.container {
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    background-color: rgb(18, 15, 36);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    background-color: rgb(18, 15, 36);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.percent {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    mix-blend-mode: difference;
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: conic-gradient(transparent, transparent, transparent, white);
+    border: 100px;
+}
+
+.active::before {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+/* ================================================ */
+/* ================================================ */
+/* ================================================ */
+/* .inp input {
+    padding: 10px;
+    border: none;
+}
+
+.inp input:focus {
+    outline: none;
+}
+
+.inp {
+    display: flex;
+}
+
+.show-password {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+} */
+/* ====================================================== */
+/* ====================================================== */
+/* ====================================================== */
+/* .stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.star {
+    font-size: 38px;
+    color: rgba(255, 255, 255, 0.493);
+    mix-blend-mode: difference;
+    cursor: pointer;
+}
+
+.active {
+    color: gold;
+} */
+/* ====================================================== */
+/* ====================================================== */
+/* ====================================================== */
+/* .img-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box {
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.image {
+    background-image: url('assets/images/11.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.hovered {
+    border: 2px dashed rgb(255, 255, 255);
+} */
+/* ============================================== */
+/* ============================================== */
+/* ============================================== */
+/* .icon {
+    color: black;
+}
+
+.link {
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.btn {
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    z-index: 4;
+    cursor: pointer;
+    transform: rotate(-315deg);
+}
+
+.nav-container {
+    position: fixed;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: 20px;
+    row-gap: 20px;
+    transform: rotate(315deg);
+}
+
+.nav-items {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+}
+
+.link {
+    position: absolute;
+    transform: rotate(calc(var(--i)*(360deg/8))) translateY(120px);
+}
+
+.icon {
+    transform: rotate(calc(var(--i)*(360deg/-9))); 
+}
+    */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+.section {
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s linear;
+    transform: translateX(-100%);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(124, 130, 136);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.card:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+/* .card:nth-child(3) {
+    transition-delay: 300ms;
+
+}
+
+.card:nth-child(4) {
+    transition-delay: 400ms;
+
+} */
+
+
+.animate {
+    transition: 1s;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.card:nth-child(4) {
+    transition-delay: 200ms;
+}
+
+.card:nth-child(3) {
+    transition-delay: 300ms;
+}
+
+.show {
+    opacity: 1;
+    transform: translate(0);
 }

@@ -1374,30 +1374,140 @@
 // ====================================================================
 // ====================================================================
 // ====================================================================
-let minute = document.querySelector('.minute');
-let second = document.querySelector(".second");
-let body = document.querySelector('.body');
-let hour = document.querySelector('.hour');
-let btn = document.querySelector('.btn');
+// let minute = document.querySelector('.minute');
+// let second = document.querySelector(".second");
+// let body = document.querySelector('.body');
+// let hour = document.querySelector('.hour');
+// let btn = document.querySelector('.btn');
 
-const timeFunction = () => {
-    let date = new Date();
-    let min = (date.getMinutes() / 60) * 360;
-    let sec = (date.getSeconds() / 60) * 360;
-    let hr = (date.getHours() / 12) * 360;
-    minute.style.transform = `rotate(${min}deg)`
-    second.style.transform = `rotate(${sec}deg)`
-    hour.style.transform = `rotate(${hr}deg)`
-}
-setInterval(timeFunction, 1000);
-btn.addEventListener('click', function () {
-    console.log('sfdsfd')
-    body.classList.toggle('dark')
-    if (btn.innerHTML == "Dark Mode") {
-        btn.innerHTML = "Light Mode"
-    }
-    else {
-        btn.innerHTML = "Dark Mode"
-    }
+// const timeFunction = () => {
+//     let date = new Date();
+//     let min = (date.getMinutes() / 60) * 360;
+//     let sec = (date.getSeconds() / 60) * 360;
+//     let hr = (date.getHours() / 12) * 360;
+//     minute.style.transform = `rotate(${min}deg)`
+//     second.style.transform = `rotate(${sec}deg)`
+//     hour.style.transform = `rotate(${hr}deg)`
+// }
+// setInterval(timeFunction, 1000);
+// btn.addEventListener('click', function () {
+//     console.log('sfdsfd')
+//     body.classList.toggle('dark')
+//     if (btn.innerHTML == "Dark Mode") {
+//         btn.innerHTML = "Light Mode"
+//     }
+//     else {
+//         btn.innerHTML = "Dark Mode"
+//     }
+// })
+// =========================================================
+// =========================================================
+// =========================================================
+// let percent = document.querySelector('.percent');
+// let value = 0;
+// const card = document.querySelector('.active');
+// let count = setInterval(() => {
+//     value++;
+//     percent.innerHTML = `${value}%`;
+//     if (value >= 100) {
+//         clearInterval(count);
+//         card.style.background = "conic-gradient(white, white, white, white)";
+//     }
+
+// }, 100)
+// ============================================
+// ============================================
+// ============================================
+// const inp = document.querySelector('.input');
+// const btn = document.querySelector('.show-password');
+// btn.addEventListener('click', () => {
+//     if (inp.type == "password") {
+//         inp.type = "text";
+//         btn.innerHTML = 'hide'
+//     }
+//     else {
+//         inp.type = 'password';
+//         btn.innerHTML = 'show'
+//     }
+// })
+// =====================================================
+// =====================================================
+// =====================================================
+// let stars = document.querySelectorAll('.star');
+
+// stars.forEach(function (star, index1) {
+//     star.addEventListener('click', function () {
+//         console.log(index1)
+//         stars.forEach(function (star2, index2) {
+//             console.log(index2)
+//             index1 >= index2 ? star2.classList.toggle('active') : star2.classList.remove('active');
+//         })
+//     })
+// })
+
+// stars.forEach(function (star, index1) {
+//     star.addEventListener('mouseover', function () {
+//         console.log(index1)
+//         stars.forEach(function (star2, index2) {
+//             console.log(index2)
+//             index1 >= index2 ? star2.classList.add('active') : star2.classList.remove('active');
+//         })
+//     })
+// })
+// ===============================================================
+// ===============================================================
+// ===============================================================
+// let boxes = document.querySelectorAll('.box');
+// let image = document.querySelector('.image');
+// boxes.forEach(function (box) {
+//     box.addEventListener('dragover', function (e) {
+//         e.preventDefault();
+//         box.appendChild(image)
+//         box.classList.add('hovered');
+//     })
+//     box.addEventListener('dragleave', function () {
+//         box.classList.remove('hovered')
+//     })
+//     box.addEventListener('drop', function () {
+//         box.classList.remove('hovered')
+//     })
+// })
+// ================================================================
+// ============================= JS Arrow functions ===============
+// ================================================================
+// fistFunction = (e, i) => {
+//     let sum = e + i;
+// }
+// fistFunction(2, 8)
+
+// function greeding(name, param = " Hello") {
+//     console.log(param, ",", name);
+// }
+// greeding("someone", "hi");
+// const axiRequest = require("axios");
+// async function testing() {
+//     let resp = await axiRequest('https://www.boredapi.con/api/activity');
+//     console.log(resp);
+// }
+// testing();
+// =================================================================
+// =================================================================
+// =================================================================
+const sec = document.querySelectorAll('.hidden');
+const ani = document.querySelectorAll('.animate');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((ent) => {
+        if (ent.isIntersecting) {
+            ent.target.classList.add('show');
+        }
+        else {
+            ent.target.classList.remove('show');
+        }
+    });
 })
-
+ani.forEach(function (e) {
+    observer.observe(e);
+})
+sec.forEach(function (data) {
+    observer.observe(data);
+})
