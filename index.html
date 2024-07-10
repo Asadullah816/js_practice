@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Practice</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/Sass/main.css">
     <style>
         /* #blue {
             background-color: blue;
@@ -759,7 +759,7 @@
     <!-- =========================================================== -->
     <!-- =========================================================== -->
     <!-- =========================================================== -->
-    <div class="section hidden container">
+    <!-- <div class="section hidden container">
         <h1>Section 1</h1>
         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vitae delectus, itaque id expedita voluptatem
             enim iusto numquam suscipit saepe velit odit qui inventore tempore cumque repellat. Voluptate, ullam
@@ -788,8 +788,57 @@
             enim iusto numquam suscipit saepe velit odit qui inventore tempore cumque repellat. Voluptate, ullam
             doloribus.</h4>
     </div>
+ -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- <div class="container">
+        <div class="main-container">
+            <div class="card">
+                <div class="inp-div">
+                    <label for="task">Enter Something</label>
+                    <input type="text" id="task" placeholder="Enter" class="input">
+                    <button class="add">Add</button>
+                </div>
+                <div class="main-content">
 
+                    <div class="task">
+                        <div class="check">
+                            <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
+                            <p>This will be task</p>
+                        </div>
+                        <div class="delete" onclick="taskDelete(this)">
+                            <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-container">
 
+        </div>
+    </div> -->
+    <!-- ===================================================== -->
+    <!-- ===================================================== -->
+    <!-- ===================================================== -->
+    <div class="container">
+        <div class="game-container">
+            <h2>Guess My Number?</h2>
+            <button class="again">Again</button>
+            <h1 class="guess-number">?</h1>
+            <div class="game">
+                <div class="game-check">
+                    <input type="number" value="" class="input" min="0" max="20">
+                    <button class="check">Check!</button>
+                </div>
+                <div class="game-result">
+                    <h4 class="start">Start Guessing...</h4>
+                    <h4 class="rounds"></h4>
+                    <h4 class="score"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

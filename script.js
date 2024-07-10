@@ -948,7 +948,7 @@
 //         resetState();
 //         cardHead.innerHTML = "Quiz Finished";
 //         let result = document.createElement('h1');
-//         result.innerHTML = `You Correct Answers is ${score} out of ${questions.length}`
+//         result.innerHTML = `Your Correct Answers is ${score} out of ${questions.length}`
 //         cardHead.appendChild(result);
 //         nextBtn.innerHTML = "FINISH";
 //     }
@@ -1493,21 +1493,353 @@
 // =================================================================
 // =================================================================
 // =================================================================
-const sec = document.querySelectorAll('.hidden');
-const ani = document.querySelectorAll('.animate');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((ent) => {
-        if (ent.isIntersecting) {
-            ent.target.classList.add('show');
-        }
-        else {
-            ent.target.classList.remove('show');
-        }
-    });
-})
-ani.forEach(function (e) {
-    observer.observe(e);
-})
-sec.forEach(function (data) {
-    observer.observe(data);
-})
+// const sec = document.querySelectorAll('.hidden');
+// const ani = document.querySelectorAll('.animate');
+// const observer = new IntersectionObserver((entries) => {
+//     entries.forEach((ent) => {
+//         if (ent.isIntersecting) {
+//             ent.target.classList.add('show');
+//         }
+//         else {
+//             ent.target.classList.remove('show');
+//         }
+//     });
+// })
+// ani.forEach(function (e) {
+//     observer.observe(e);
+// })
+// sec.forEach(function (data) {
+//     observer.observe(data);
+// })
+//=====================================================================
+//=====================================================================
+//=====================================================================
+// let res = new Promise(function (res, rej) {
+//     return res("This is first Function");
+// })
+// let p1 = res.then(function (data) {
+//     console.log(data);
+//     return new Promise(function (res, rej) {
+//         return res("This is the P1 function return");
+//     })
+// })
+// let p2 = p1.then(function (data) {
+//     console.log(data);
+//     return new Promise(function (res, rej) {
+//         return res(console.log('the last function'))
+//     })
+// })
+
+// let [e, i, ...j] = [2, 4, 5, 5, 3, 2, 4, 2, 4, 5, 6]
+// console.log(e, i, j);
+
+
+// function fun(a, b, c) {
+//     console.log(a, b, c)
+// }
+// console.log(name);
+
+// let data = [21, 44, 22, 66, 652, 11];
+// fun(...data);
+// console.log(...data);
+// for (let i = 0; i < data.length; i++) {
+//     console.log(data[i]);
+// }
+
+// var name = "asdfasdf"
+// function promiceData() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve(console.log(
+//                 "This is resolved"
+//             ))
+//         }, 2000)
+//     })
+
+// }
+
+// async function data() {
+//     console.log('Loading...');
+//     let res = await promiceData();
+// }
+// data()'
+
+// let newData = new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//         resolve('This will be resolve')
+//     }, 4000);
+// })
+// async function data() {
+//     console.log('Wait...')
+//     let res = await newData;
+//     console.log(res);
+// }
+
+// data()
+// let data = [4, 4, 3, 43, 4, 34, 3, 4, 3, 3, 43, 4]
+// console.log(...data);
+// console.log(data)
+
+// =======================================================================
+// =======================================================================
+// =======================================================================
+// const addTask = document.querySelector('.add');
+// const input = document.querySelector('.input');
+// const mainContainer = document.querySelector('.main-content');
+// const check = document.querySelector('.check')
+// const task = document.querySelectorAll('task');
+// let val;
+// function taskFun() {
+//     addTask.addEventListener('click', () => {
+//         val = input.value;
+//         if (val == "" || val == " ") {
+//             alert("Please Enter some text");
+//         }
+//         else {
+//             let data = ` <div class="task">
+//                         <div class="check">
+//                             <input type="checkbox"  onchange="complete(this)">
+//                             <p>${val}</p>
+//                         </div>
+//                         <div class="delete" onclick="taskDelete(this)">
+//                              <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+//                         </div>
+//                     </div>`
+//             mainContainer.innerHTML += data;
+//             input.value = ""
+//         }
+//         save();
+//     })
+// }
+// taskFun();
+// taskDelete = (e) => {
+//     e.closest('.task').remove();
+//     save();
+// }
+// function complete(e) {
+//     if (e.checked) {
+//         let data = e.closest('.task');
+//         data.classList.add('complete');
+//         e.checked = true
+//         save();
+
+//     }
+//     else {
+//         let data = e.closest('.task');
+//         data.classList.remove('complete');
+//         save();
+//     }
+// }
+// let saveData = "data"
+// function save() {
+//     localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
+// }
+// function load() {
+//     let data = JSON.parse(localStorage.getItem(saveData));
+//     if (data) {
+//         mainContainer.innerHTML = data;
+//     }
+// }
+// load();
+// check.checked = true;
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// const markWeight = 78;
+// const markHeight = 2.69;
+
+// let markBmi = markWeight / markHeight ** 2;
+// markBmi = markWeight / (markHeight * markHeight);
+// console.log(markBmi);
+
+// const johnWeight = 92;
+// const johnHeight = 1.95;
+
+// let johnBmi = johnWeight / johnHeight ** 2;
+// johnBmi = johnWeight / (johnHeight * johnHeight);
+
+// console.log(johnBmi);
+
+// let markHeighterBmi = markBmi > johnBmi;
+// console.log(markHeighterBmi)
+// // ==========================================
+
+// if (markBmi > johnBmi) {
+//     console.log(`Marks BMI ${markBmi} is greater then John Bmi ${johnBmi}`);
+// }
+// else {
+//     console.log(`john's BMI ${johnBmi} is greater then Mark's Bmi ${markBmi}`);
+// }
+
+// ==================================================
+// let dolphins = (96 + 108 + 89) / 3;
+// dolphins = Math.floor(dolphins);
+// console.log(dolphins);
+// let koalas = (88 + 91 + 110) / 3;
+// koalas = Math.floor(koalas);
+
+// if (dolphins > koalas) {
+//     console.log('Dolphins Is Winner');
+// }
+// else {
+//     console.log('koalas is Winner');
+// }
+
+
+// const person = {
+//     firstName: "Salamortand",
+//     lastName: "Zillar",
+//     job: "Camera Man",
+//     dob: 1990,
+//     dl: false,
+//     friends: ['michel', 'peter', 'salmon'],
+//     age: function () {
+//         return 2024 - this.dob;
+//     }
+// }
+// console.log(person)
+// console.log(person.lastName);
+// const personJob = "job";
+// console.log(person.personJob);
+// console.log(person[personJob]);
+// console.log(person['job']);
+// console.log(person.age());
+// console.log(`${person.firstName} is a ${person.age()}-years old ${person.job}, and he has ${person.dl ? "a" : "not"} driving license `);
+// const john = {
+//     firstName: "John",
+//     weight: 92,
+//     height: 1.95,
+//     calBmi: function () {
+//         let bmi = this.weight / this.height ** 2;
+//         bmi = this.weight / (this.height / this.height);
+//         return bmi;
+//     }
+// }
+// const mark = {
+//     firstName: "Mark",
+//     weight: 78,
+//     height: 1.69,
+//     calBmi: function () {
+//         let bmi = this.weight / this.height ** 2;
+//         bmi = this.weight / (this.height / this.height);
+//         return bmi;
+//     }
+
+// }
+// if (mark.calBmi() > john.calBmi) {
+//     console.log(`The ${mark.firstName} is Higher BMI which is ${mark.calBmi()} and the ${john.firstName} BMI is ${john.calBmi()}`);
+// }
+// else {
+//     console.log(`The ${john.firstName} is Higher BMI which is ${john.calBmi()} and the ${mark.firstName} BMI is ${mark.calBmi()}`)
+// }
+// const arr = ['2003', '1939', '2001', '2002'];
+// let age = [];
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(`The birth date is ${arr[i]}`);
+//     age.push(2024 - arr[i])
+//     console.log(age[i])
+// }
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i]);
+//     age.push(2024 - arr[i]);
+//     console.log(age[i]);
+
+// }
+// let sum = 0;
+// const arr = [22, 44, 55, 66, 66];
+// for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+// }
+// console.log(sum);
+// ==========================================
+// ======= GUESS GAME =======================
+// ==========================================
+
+// const check = document.querySelector('.check');
+// const score = document.querySelector('.score');
+// const inputVal = document.querySelector('.input');
+// const rounds = document.querySelector('.rounds');
+// const start = document.querySelector('.start');
+// const again = document.querySelector('.again');
+// const number = document.querySelector('.guess-number');
+// let round = 20;
+// let highScore = 0;
+// score.textContent = 'Higher Score is 0';
+// rounds.textContent = `Rounds Lift: ${round}`;
+// let random = Math.ceil(Math.random() * 10);
+// check.addEventListener('click', function () {
+//     const input = document.querySelector('.input').value;
+//     if (round > 0) {
+//         if (!input) {
+//             console.log('The input is empty');
+//         } else if (input == random) {
+//             number.textContent = random;
+//             start.textContent = `Correct Answer!!!`;
+//             check.ariaDisabled = true;
+//             highScore += random;
+//             score.textContent = `Higher Score is ${highScore}`;
+//             check.style.display = "none";
+//             again.style.display = 'block';
+//             inputVal.value = "";
+//             again.addEventListener('click', function () {
+//                 random = Math.ceil(Math.random() * 10);
+//                 check.style.display = "block";
+//                 again.style.display = 'none';
+//                 number.textContent = `?`;
+//                 inputVal.value = "";
+//             })
+//         }
+//         else if (input > random) {
+//             console.log(random);
+//             start.textContent = `Too Hight`;
+//             round--;
+//             rounds.textContent = `Rounds Lift: ${round}`;
+//             console.log('not matched');
+//             inputVal.value = "";
+//         } else if (input < random) {
+//             start.textContent = `Too Low`;
+//             round--;
+//             rounds.textContent = `Rounds Lift: ${round}`;
+//             inputVal.value = "";
+//         }
+//     } else {
+//         start.textContent = `Game Over!!!`;
+//     }
+// })
+
+// ===============================================
+// ===============================================
+// ===============================================
+// const myFunction = function (name = "someOne", age =33){
+//     console.log(name + "  " + age);
+// }
+// myFunction();
+const restorant = {
+    resName: "Italian Restro",
+    branch: 1,
+    mainMenu: ['pizza', 'burger', 'fries'],
+}
+console.log(...restorant.mainMenu);
+const newMenu = [...restorant.mainMenu, 'shawarma'];
+const allMenu = [...newMenu, 'Sandwitch'];
+console.log(allMenu);
+console.log(...allMenu);
+
+const str = "Asad";
+const lastName = "Khan"
+const letters = [...str, ' ', ...lastName]
+console.log(...letters);
+console.log(letters);
+console.log({ ...restorant, loc: "somewhere" });
+
+const data = [3, 5, 2, 6];
+function myData(a, b, ...c) {
+
+    console.log(a, b, ...c);
+}
+myData(1, 2, ...data);
+
+
