@@ -792,7 +792,7 @@
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- <div class="container">
+    <div class="container">
         <div class="main-container">
             <div class="card">
                 <div class="inp-div">
@@ -805,10 +805,15 @@
                     <div class="task">
                         <div class="check">
                             <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
-                            <p>This will be task</p>
+                            <p class="para">This will be task</p>
                         </div>
-                        <div class="delete" onclick="taskDelete(this)">
-                            <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+                        <div class="action">
+                            <div class="delete" onclick="taskDelete(this)">
+                                <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+                            </div>
+                            <div class="edit" onclick="edit(this)">
+                                <img src="assets/images/edit.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -817,11 +822,11 @@
         <div class="show-container">
 
         </div>
-    </div> -->
+    </div>
     <!-- ===================================================== -->
     <!-- ===================================================== -->
     <!-- ===================================================== -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="game-container">
             <h2>Guess My Number?</h2>
             <button class="again">Again</button>
@@ -838,8 +843,15 @@
                 </div>
             </div>
         </div>
+    </div> -->
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+    <div class="container">
+        <h1>Random backGround Colors.</h1>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 

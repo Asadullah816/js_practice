@@ -1583,65 +1583,81 @@
 // =======================================================================
 // =======================================================================
 // =======================================================================
-// const addTask = document.querySelector('.add');
-// const input = document.querySelector('.input');
-// const mainContainer = document.querySelector('.main-content');
-// const check = document.querySelector('.check')
-// const task = document.querySelectorAll('task');
-// let val;
-// function taskFun() {
-//     addTask.addEventListener('click', () => {
-//         val = input.value;
-//         if (val == "" || val == " ") {
-//             alert("Please Enter some text");
-//         }
-//         else {
-//             let data = ` <div class="task">
-//                         <div class="check">
-//                             <input type="checkbox"  onchange="complete(this)">
-//                             <p>${val}</p>
-//                         </div>
-//                         <div class="delete" onclick="taskDelete(this)">
-//                              <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
-//                         </div>
-//                     </div>`
-//             mainContainer.innerHTML += data;
-//             input.value = ""
-//         }
-//         save();
-//     })
-// }
-// taskFun();
-// taskDelete = (e) => {
-//     e.closest('.task').remove();
-//     save();
-// }
-// function complete(e) {
-//     if (e.checked) {
-//         let data = e.closest('.task');
-//         data.classList.add('complete');
-//         e.checked = true
-//         save();
-
-//     }
-//     else {
-//         let data = e.closest('.task');
-//         data.classList.remove('complete');
-//         save();
-//     }
-// }
-// let saveData = "data"
-// function save() {
-//     localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
-// }
-// function load() {
-//     let data = JSON.parse(localStorage.getItem(saveData));
-//     if (data) {
-//         mainContainer.innerHTML = data;
-//     }
-// }
-// load();
-// check.checked = true;
+const addTask = document.querySelector('.add');
+const input = document.querySelector('.input');
+const mainContainer = document.querySelector('.main-content');
+const check = document.querySelector('.check')
+const taskText = document.querySelector('.para');
+const task = document.querySelectorAll('task');
+// const edit = document.querySelector('.edit');
+let checktask;
+let val;
+function taskFun() {
+    addTask.addEventListener('click', () => {
+        val = input.value;
+        if (val == "" || val == " ") {
+            alert("Please Enter some text");
+        }
+        else {
+            let data = ` <div class="task">
+                        <div class="check">
+                            <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
+                            <p class="para">${val}</p>
+                        </div>
+                        <div class="action">
+                            <div class="delete" onclick="taskDelete(this)">
+                                <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+                            </div>
+                            <div class="edit" onclick="edit(this)">
+                                <img src="assets/images/edit.png" alt="">
+                            </div>
+                        </div>
+                    </div>`
+            mainContainer.innerHTML += data;
+            input.value = ""
+        }
+        save();
+    })
+}
+taskFun();
+taskDelete = (e) => {
+    e.closest('.task').remove();
+    save();
+}
+function edit(e){
+    editData =  e.closest(".task").querySelector('p').textContent;
+    input.value = editData;
+    e.closest(".task").remove();
+    save();
+    // e.closest('task').remove();
+    // save();
+}
+function complete(e) {
+    if (e.checked) {
+        let data = e.closest('.task');
+        data.classList.add('complete');
+        e.setItem = "changed";
+        e.setAttribute('checked',true);
+        save();
+    }
+    else {
+        let data = e.closest('.task');
+        data.classList.remove('complete');
+        e.removeAttribute('checked', false);
+        save();
+    }
+}
+let saveData = "data"
+function save() {
+    localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
+}
+function load() {
+    let data = JSON.parse(localStorage.getItem(saveData));
+    if (data) {
+        mainContainer.innerHTML = data;
+    }
+}
+load();
 // =================================================================================
 // =================================================================================
 // =================================================================================
@@ -1817,29 +1833,126 @@
 //     console.log(name + "  " + age);
 // }
 // myFunction();
-const restorant = {
-    resName: "Italian Restro",
-    branch: 1,
-    mainMenu: ['pizza', 'burger', 'fries'],
-}
-console.log(...restorant.mainMenu);
-const newMenu = [...restorant.mainMenu, 'shawarma'];
-const allMenu = [...newMenu, 'Sandwitch'];
-console.log(allMenu);
-console.log(...allMenu);
+// const restorant = {
+//     resName: "Italian Restro",
+//     branch: 1,
+//     mainMenu: ['pizza', 'burger', 'fries'],
+// }
+// console.log(...restorant.mainMenu);
+// const newMenu = [...restorant.mainMenu, 'shawarma'];
+// const allMenu = [...newMenu, 'Sandwitch'];
+// console.log(allMenu);
+// console.log(...allMenu);
 
-const str = "Asad";
-const lastName = "Khan"
-const letters = [...str, ' ', ...lastName]
-console.log(...letters);
-console.log(letters);
-console.log({ ...restorant, loc: "somewhere" });
+// const str = "Asad";
+// const lastName = "Khan"
+// const letters = [...str, ' ', ...lastName]
+// console.log(...letters);
+// console.log(letters);
+// console.log({ ...restorant, loc: "somewhere" });
 
-const data = [3, 5, 2, 6];
-function myData(a, b, ...c) {
+// const data = [3, 5, 2, 6];
+// function myData(a, b, ...c) {
+//     console.log(a, b, ...c);
+// }
+// myData(1, 2, ...data);
+// ===============================
+// ===============================
+// ===============================
+// const gk = 'GoalKeeper';
+// const fieldPlayers = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10'];
+// const gkT2 = 'GoalKeeper';
+// const fieldPlayers2 = ['p21', 'p22', 'p23', 'p24', 'p25', 'p26', 'p27', 'p28', 'p29', 'p210'];
 
-    console.log(a, b, ...c);
-}
-myData(1, 2, ...data);
+// const player1 = [gk, ...fieldPlayers];
+// const player2 = [gkT2, ...fieldPlayers2];
+// console.log(player1);
+// console.log(player2);
+// const AllPlayers = [...player1, ...player2]
+// console.log(AllPlayers)
+// const finalPlayers1 = [...player1, 'burshi', 'hudil', 'gidani'];
 
+// const game = {
+//     team1: "Bayern Munich",
+//     team2: "Borrussis Dortmund",
+//     players: [
+//         [
+//             'Neuer',
+//             'Pavard',
+//             'Martinez',
+//             'Alaba',
+//             'Davies',
+//             'Kimmich',
+//             'Goretzka',
+//             'Coman',
+//             'Muller',
+//             'Gnarby',
+//             'Lewandowski',
+//         ],
+//         [
+//             'Burki',
+//             'Schulz',
+//             'Hummels',
+//             'Akanji',
+//             'Hakimi',
+//             'Weigl',
+//             'Witsel',
+//             'Hazard',
+//             'Brandt',
+//             'Sancho',
+//             'Gotze',
+//         ],
+//     ],
+//     score: '4:0',
+//     scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//     date: 'Nov 9thm 2037',
+//     odds: {
+//         team1: 1.33,
+//         x: 3.25,
+//         team2: 6.2,
+//     }
+// };
+// const [player1, player2] = game.players;
+// console.log(player1);
+// console.log(player2);
+// const AllPlayers = [...player1, ...player2]
+// console.log(AllPlayers);
+
+// const finalPlayers1 = [...player1, 'Thiago', 'Coutinho', 'Perisic'];
+// console.log(finalPlayers1);
+// const { team1, x, team2 } = game.odds;
+// console.log(team1, x, team2)
+// ================================================================
+// let body = document.querySelector('.body');
+// let start = document.querySelector('.start');
+// let stop = document.querySelector('.stop');
+// function randomColor() {
+//     let hex = "01234656789ABCDEF"
+//     let color = '#';
+//     for (let i = 0; i < 6; i++) {
+//         color += hex[Math.floor(Math.random() * 16)];
+//     }
+//     body.style.background = color;
+// }
+// let intervalId;
+// function startInterval() {
+//     intervalId = setInterval(randomColor, 1000);
+// }
+// function stopInterval() {
+//     clearInterval(intervalId);
+//     body.style.background = null;
+// }
+// start.addEventListener('click', function (e) {  
+//     startInterval();
+// });
+// stop.addEventListener('click', stopInterval);
+// try{
+//     console.log("sfrdsfdsf");
+// }catch{
+    
+// }
+
+// =========================================
+// =========================================
+// =========================================
 

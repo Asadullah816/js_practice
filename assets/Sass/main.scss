@@ -14,113 +14,140 @@ $border: 10px;
   background-color: white;
   color: black;
 }
-// .main-container {
-//   .inp-div {
-//     @include display(center, column);
-//     align-items: start;
-//     input {
-//       width: 92%;
-//       padding: 10px;
-//     }
-//     label {
-//       padding-bottom: 7px;
-//     }
-//   }
-
-//   min-width: 320px;
-//   padding: 20px;
-//   @include background();
-//   border-radius: $border;
-// }
-// .main-content {
-//   @include display(center, column);
-//   .task {
-//     width: 100%;
-//     @include display(space-between, row);
-//     .delete {
-//       cursor: pointer;
-//       img {
-//         width: 30px;
-//       }
-//     }
-//     .check {
-//       @include display;
-//       column-gap: 10px;
-//       @include background;
-//       input {
-//         &:hover {
-//           cursor: pointer;
-//         }
-//         &:checked .check p {
-//           text-decoration: underline;
-//           color: $green;
-//         }
-//       }
-//     }
-//     border-bottom: 1px solid $green;
-//   }
-// }
-// .complete {
-//   color: $green;
-//   text-decoration: line-through;
-// }
-// ==============================================
-.container {
-  color: white;
-  @include display();
-  .game-container {
+.main-container {
+  width: 500px;
+  .inp-div {
     @include display(center, column);
-    h2 {
-      font-size: 48px;
+    align-items: start;
+    .add {
+      align-self: center;
+      margin-top: 20px;
+      padding: 10px 40px;
+      border-radius: 100px;
+      border: none;
+      background-color: greenyellow;
+      color: black;
+      font-weight: 600;
+      transition: 0.3s;
+      &:active {
+        color: white;
+        background-color: #ff0000;
+      }
+    }
+    input {
+      width: 92%;
+      padding: 10px;
+    }
+    label {
+      padding-bottom: 7px;
     }
   }
+
+  min-width: 320px;
+  padding: 20px;
+  @include background();
+  border-radius: $border;
 }
-.game {
-  width: 100%;
+.main-content {
   @include display(center, column);
-  .game-check {
+  .task {
     width: 100%;
-    @include display(center, column);
-    row-gap: 10px;
-    .input {
-      height: 30px;
-      width: 50%;
+    @include display(space-between, row);
+    .delete {
+      cursor: pointer;
+      img {
+        width: 30px;
+      }
     }
     .check {
-      width: 50%;
-      padding: 10px;
-      color: white;
-      background-color: black;
-      font-weight: 600;
-      font-size: 20px;
+      @include display;
+      column-gap: 10px;
+      @include background;
+      input {
+        &:hover {
+          cursor: pointer;
+        }
+        &:checked .check p {
+          text-decoration: underline;
+          color: $green;
+        }
+      }
+    }
+    border-bottom: 1px solid $green;
+  }
+}
+.complete {
+  color: $green;
+  text-decoration: line-through;
+}
+.action {
+  @include display();
+  column-gap: 12px;
+  img {
+    width: 32px;
+  }
+  .edit {
+    &:hover {
       cursor: pointer;
     }
   }
 }
-.guess-number {
-  font-size: 60px;
-  background-color: black;
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-.game-result {
-  width: 100%;
-  @include display(center, column);
-  .start,
-  .rounds,
-  .score {
-    font-size: 32px;
-    margin: 10px;
-  }
-}
-.again {
-  width: 50%;
-  padding: 10px;
-  color: white;
-  background-color: black;
-  font-weight: 600;
-  font-size: 20px;
-  cursor: pointer;
-  display: none;
-}
- 
+// ==============================================
+// .container {
+//   color: white;
+//   @include display();
+//   .game-container {
+//     @include display(center,column);
+//     h2 {
+//       font-size: 48px;
+//     }
+//   }
+// }
+// .game {
+//   width: 100%;
+//   @include display(center, column);
+//   .game-check {
+//     width: 100%;
+//     @include display(center, column);
+//     row-gap: 10px;
+//     .input {
+//       height: 30px;
+//       width: 50%;
+//     }
+//     .check {
+//       width: 50%;
+//       padding: 10px;
+//       color: white;
+//       background-color: black;
+//       font-weight: 600;
+//       font-size: 20px;
+//       cursor: pointer;
+//     }
+//   }
+// }
+// .guess-number {
+//   font-size: 60px;
+//   background-color: black;
+//   padding: 20px 40px;
+//   border-radius: 10px;
+// }
+// .game-result {
+//   width: 100%;
+//   @include display(center, column);
+//   .start,
+//   .rounds,
+//   .score {
+//     font-size: 32px;
+//     margin: 10px;
+//   }
+// }
+// .again {
+//   width: 50%;
+//   padding: 10px;
+//   color: white;
+//   background-color: black;
+//   font-weight: 600;
+//   font-size: 20px;
+//   cursor: pointer;
+//   display: none;
+// }
