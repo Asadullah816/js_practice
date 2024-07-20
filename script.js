@@ -1583,81 +1583,81 @@
 // =======================================================================
 // =======================================================================
 // =======================================================================
-const addTask = document.querySelector('.add');
-const input = document.querySelector('.input');
-const mainContainer = document.querySelector('.main-content');
-const check = document.querySelector('.check')
-const taskText = document.querySelector('.para');
-const task = document.querySelectorAll('task');
-// const edit = document.querySelector('.edit');
-let checktask;
-let val;
-function taskFun() {
-    addTask.addEventListener('click', () => {
-        val = input.value;
-        if (val == "" || val == " ") {
-            alert("Please Enter some text");
-        }
-        else {
-            let data = ` <div class="task">
-                        <div class="check">
-                            <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
-                            <p class="para">${val}</p>
-                        </div>
-                        <div class="action">
-                            <div class="delete" onclick="taskDelete(this)">
-                                <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
-                            </div>
-                            <div class="edit" onclick="edit(this)">
-                                <img src="assets/images/edit.png" alt="">
-                            </div>
-                        </div>
-                    </div>`
-            mainContainer.innerHTML += data;
-            input.value = ""
-        }
-        save();
-    })
-}
-taskFun();
-taskDelete = (e) => {
-    e.closest('.task').remove();
-    save();
-}
-function edit(e){
-    editData =  e.closest(".task").querySelector('p').textContent;
-    input.value = editData;
-    e.closest(".task").remove();
-    save();
-    // e.closest('task').remove();
-    // save();
-}
-function complete(e) {
-    if (e.checked) {
-        let data = e.closest('.task');
-        data.classList.add('complete');
-        e.setItem = "changed";
-        e.setAttribute('checked',true);
-        save();
-    }
-    else {
-        let data = e.closest('.task');
-        data.classList.remove('complete');
-        e.removeAttribute('checked', false);
-        save();
-    }
-}
-let saveData = "data"
-function save() {
-    localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
-}
-function load() {
-    let data = JSON.parse(localStorage.getItem(saveData));
-    if (data) {
-        mainContainer.innerHTML = data;
-    }
-}
-load();
+// const addTask = document.querySelector('.add');
+// const input = document.querySelector('.input');
+// const mainContainer = document.querySelector('.main-content');
+// const check = document.querySelector('.check')
+// const taskText = document.querySelector('.para');
+// const task = document.querySelectorAll('task');
+// // const edit = document.querySelector('.edit');
+// let checktask;
+// let val;
+// function taskFun() {
+//     addTask.addEventListener('click', () => {
+//         val = input.value;
+//         if (val == "" || val == " ") {
+//             alert("Please Enter some text");
+//         }
+//         else {
+//             let data = ` <div class="task">
+//                         <div class="check">
+//                             <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
+//                             <p class="para">${val}</p>
+//                         </div>
+//                         <div class="action">
+//                             <div class="delete" onclick="taskDelete(this)">
+//                                 <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+//                             </div>
+//                             <div class="edit" onclick="edit(this)">
+//                                 <img src="assets/images/edit.png" alt="">
+//                             </div>
+//                         </div>
+//                     </div>`
+//             mainContainer.innerHTML += data;
+//             input.value = ""
+//         }
+//         save();
+//     })
+// }
+// taskFun();
+// taskDelete = (e) => {
+//     e.closest('.task').remove();
+//     save();
+// }
+// function edit(e){
+//     editData =  e.closest(".task").querySelector('p').textContent;
+//     input.value = editData;
+//     e.closest(".task").remove();
+//     save();
+//     // e.closest('task').remove();
+//     // save();
+// }
+// function complete(e) {
+//     if (e.checked) {
+//         let data = e.closest('.task');
+//         data.classList.add('complete');
+//         e.setItem = "changed";
+//         e.setAttribute('checked',true);
+//         save();
+//     }
+//     else {
+//         let data = e.closest('.task');
+//         data.classList.remove('complete');
+//         e.removeAttribute('checked', false);
+//         save();
+//     }
+// }
+// let saveData = "data"
+// function save() {
+//     localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
+// }
+// function load() {
+//     let data = JSON.parse(localStorage.getItem(saveData));
+//     if (data) {
+//         mainContainer.innerHTML = data;
+//     }
+// }
+// load();
 // =================================================================================
 // =================================================================================
 // =================================================================================
@@ -1942,17 +1942,231 @@ load();
 //     clearInterval(intervalId);
 //     body.style.background = null;
 // }
-// start.addEventListener('click', function (e) {  
+// start.addEventListener('click', function (e) {
 //     startInterval();
 // });
 // stop.addEventListener('click', stopInterval);
 // try{
 //     console.log("sfrdsfdsf");
 // }catch{
-    
+
 // }
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// =================================================================================
+// let val = document.querySelector('.input');
+// let container = document.querySelector('.container');
+// let btn = document.querySelectorAll('.button');
+// let res = document.querySelector('.equal');
 
-// =========================================
-// =========================================
-// =========================================
+// btn.forEach(function (e) {
+//     e.addEventListener('click', function () {
+//         val.value += e.textContent;
+//         console.log(e.textContent)
+//     })
+// })
+// res.addEventListener('click', function () {
+//     let result = val.value;
+//     console.log(eval(result));
+//     let data = document.createElement("h1");
+//     data.textContent = result
+//     container.append(data)
+// })
+// console.log(val);
+// let calc = eval(val);
+// console.log(calc)
+// ===============================================
+// ===============================================
+// ===============================================
+// ===============================================
+const btn = document.querySelectorAll('.btn');
+const qNo = document.querySelector('.q-no');
+const ques_container = document.querySelector('.questions');
+const ans_container = document.querySelector('.answers');
+const next = document.querySelector('.next');
+let que = document.querySelector('.question');
 
+const questions = [
+   {
+      question: "What is the capital of Japan?",
+      answer: [
+         {
+            text: "Tokyo",
+            correct: true,
+         },
+         {
+            text: "Beijing",
+            correct: false,
+         },
+         {
+            text: "Seoul",
+            correct: false,
+         },
+         {
+            text: "Bangkok",
+            correct: false,
+         },
+      ]
+   },
+   {
+      question: "Who painted the Mona Lisa?",
+      answer: [
+         {
+            text: "Vincent van Gogh ",
+            correct: false,
+         },
+         {
+            text: "Pablo Picasso",
+            correct: false,
+         },
+         {
+            text: "Leonardo da Vinci",
+            correct: true,
+         },
+         {
+            text: "Michelangel",
+            correct: false,
+         },
+      ]
+   },
+   {
+      question: "Which planet is known as the Red Planet",
+      answer: [
+         {
+            text: "Earth",
+            correct: false,
+         },
+         {
+            text: "Mars",
+            correct: true,
+         },
+         {
+            text: "Jupiter",
+            correct: false,
+         },
+         {
+            text: "Venus",
+            correct: false,
+         },
+      ]
+   },
+   {
+      question: "What is the largest ocean on Earth",
+      answer: [
+         {
+            text: "Atlantic Ocean",
+            correct: false,
+         },
+         {
+            text: "Indian Ocean",
+            correct: false,
+         },
+         {
+            text: "Arctic Ocean",
+            correct: false,
+         },
+         {
+            text: "Pacific Ocean",
+            correct: true,
+         },
+      ]
+   },
+   {
+      question: "What is the chemical symbol for gold?",
+      answer: [
+         {
+            text: "Au",
+            correct: true,
+         },
+         {
+            text: "Ag",
+            correct: false,
+         },
+         {
+            text: "Fe",
+            correct: false,
+         },
+         {
+            text: "Pb",
+            correct: false,
+         },
+      ]
+   },
+]
+function startQuizz() {
+   que.innerHTML = questions[index].question;
+   for (let i = 0; i < questions[index].answer.length; i++) {
+      btn[i].innerHTML = questions[index].answer[i].text;
+      let ans = questions[index].answer[i];
+      if (ans.correct == true) {
+         btn[i].setAttribute('data-correct', 'true');
+      }
+      qNo.innerHTML = `Question no: ${index + 1}`;
+   }
+}
+let index = 0;
+let score = 0;
+function check() {
+   btn.forEach(b => {
+      b.addEventListener('click', function (e) {
+         if (b.dataset.correct) {
+            score++;
+            console.log(b, score, index)
+            b.classList.add("correct")
+         }
+         else {
+            b.classList.add("incorrect")
+         }
+         btn.forEach(function (btns) {
+            if (btns.dataset.correct) {
+               btns.classList.add("correct");
+            }
+         })
+         next.style.visibility = "visible"
+         btn.forEach(function (bt) {
+            bt.classList.add('disable')
+            bt.disabled = true;
+            if (bt.dataset.correct) {
+               bt.removeAttribute('data-correct');
+            }
+         })
+      })
+   })
+}
+function resetState() {
+   btn.forEach(function (btns) {
+      btns.classList.remove("correct");
+      btns.classList.remove('incorrect');
+   })
+   next.style.visibility = "hidden"
+   btn.forEach(function (bt) {
+      bt.classList.remove('disable')
+      bt.disabled = false;
+   })
+   setTimeout(() => {
+      next.disabled = false;
+   }, 1000);
+}
+check()
+startQuizz()
+next.addEventListener('click', function (e) {
+   e.preventDefault();
+   e.target.disabled = true;
+   // console.log(questions.length)
+   // console.log(index)
+   if (index < questions.length - 1) {
+      resetState();
+      index++
+      startQuizz();
+   } else if (index === questions.length - 1) {
+      ques_container.style.display = "none"
+      qNo.innerHTML = `Quizz Finished Your Total Marks is ${score} out of ${questions.length}`;
+      qNo.style.fontSize = "32px";
+   }
+   else {
+      console.log()
+   }
+})

@@ -14,84 +14,98 @@ $border: 10px;
   background-color: white;
   color: black;
 }
-.main-container {
-  width: 500px;
-  .inp-div {
-    @include display(center, column);
-    align-items: start;
-    .add {
-      align-self: center;
-      margin-top: 20px;
-      padding: 10px 40px;
-      border-radius: 100px;
-      border: none;
-      background-color: greenyellow;
-      color: black;
-      font-weight: 600;
-      transition: 0.3s;
-      &:active {
-        color: white;
-        background-color: #ff0000;
-      }
-    }
-    input {
-      width: 92%;
-      padding: 10px;
-    }
-    label {
-      padding-bottom: 7px;
-    }
+@mixin btn {
+  padding: 10px 100px;
+  background-color: gray;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  &:hover {
+    background-color: antiquewhite;
+    color: black;
   }
+}
+// .main-container {
+//   width: 500px;
+//   .inp-div {
+//     @include display(center, column);
+//     align-items: start;
+//     .add {
+//       align-self: center;
+//       margin-top: 20px;
+//       padding: 10px 40px;
+//       border-radius: 100px;
+//       border: none;
+//       background-color: greenyellow;
+//       color: black;
+//       font-weight: 600;
+//       transition: 0.3s;
+//       &:active {
+//         color: white;
+//         background-color: #ff0000;
+//       }
+//     }
+//     input {
+//       width: 92%;
+//       padding: 10px;
+//     }
+//     label {
+//       padding-bottom: 7px;
+//     }
+//   }
 
-  min-width: 320px;
-  padding: 20px;
-  @include background();
-  border-radius: $border;
-}
-.main-content {
-  @include display(center, column);
-  .task {
-    width: 100%;
-    @include display(space-between, row);
-    .delete {
-      cursor: pointer;
-      img {
-        width: 30px;
-      }
-    }
-    .check {
-      @include display;
-      column-gap: 10px;
-      @include background;
-      input {
-        &:hover {
-          cursor: pointer;
-        }
-        &:checked .check p {
-          text-decoration: underline;
-          color: $green;
-        }
-      }
-    }
-    border-bottom: 1px solid $green;
-  }
-}
-.complete {
-  color: $green;
-  text-decoration: line-through;
-}
-.action {
-  @include display();
-  column-gap: 12px;
-  img {
-    width: 32px;
-  }
-  .edit {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
+//   min-width: 320px;
+//   padding: 20px;
+//   @include background();
+//   border-radius: $border;
+// }
+// .main-content {
+//   @include display(center, column);
+//   .task {
+//     width: 100%;
+//     @include display(space-between, row);
+//     .delete {
+//       cursor: pointer;
+//       img {
+//         width: 30px;
+//       }
+//     }
+//     .check {
+//       @include display;
+//       column-gap: 10px;
+//       @include background;
+//       input {
+//         &:hover {
+//           cursor: pointer;
+//         }
+//         &:checked .check p {
+//           text-decoration: underline;
+//           color: $green;
+//         }
+//       }
+//     }
+//     border-bottom: 1px solid $green;
+//   }
+// }
+// .complete {
+//   color: $green;
+//   text-decoration: line-through;
+// }
+// .action {
+//   @include display();
+//   column-gap: 12px;
+//   img {
+//     width: 32px;
+//   }
+//   .edit {
+//     &:hover {
+//       cursor: pointer;
+//     }
+//   }
+// }
 // ==============================================
 // .container {
 //   color: white;
@@ -151,3 +165,57 @@ $border: 10px;
 //   cursor: pointer;
 //   display: none;
 // }
+//
+.container {
+  @include display(center, column);
+  .quizz {
+    @include display(center, column);
+    h1 {
+      font-size: 48px;
+      padding: 20px 0px;
+      margin: 0px;
+      color: rgb(0, 255, 242);
+    }
+    .questions {
+      @include display(center, column);
+      h4 {
+        font-size: 28px;
+        color: white;
+        margin: 0px;
+        padding: 10px 0px;
+      }
+      .answers {
+        @include display(center, column);
+        row-gap: 12px;
+        button {
+          @include btn();
+        }
+        .correct {
+          background-color: $green !important;
+        }
+        .incorrect {
+          background-color: $red !important;
+        }
+        .disable {
+          background-color: rgba(165, 143, 143, 0.73);
+          cursor: no-drop;
+          &:hover {
+            background-color: rgba(165, 143, 143, 0.73);
+            cursor: no-drop;
+            color: white;
+          }
+        }
+      }
+      .next-btn {
+        .next {
+          @include btn();
+          margin-top: 30px;
+          padding: 10px 40px;
+          border-radius: 100px;
+          background-color: $green;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

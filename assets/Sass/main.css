@@ -1,95 +1,85 @@
-.main-container {
-  width: 500px;
-  min-width: 320px;
-  padding: 20px;
-  background-color: white;
-  color: black;
-  border-radius: 10px;
-}
-.main-container .inp-div {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  align-items: start;
 }
-.main-container .inp-div .add {
-  align-self: center;
-  margin-top: 20px;
-  padding: 10px 40px;
-  border-radius: 100px;
+.container .quizz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .quizz h1 {
+  font-size: 48px;
+  padding: 20px 0px;
+  margin: 0px;
+  color: rgb(0, 255, 242);
+}
+.container .quizz .questions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .quizz .questions h4 {
+  font-size: 28px;
+  color: white;
+  margin: 0px;
+  padding: 10px 0px;
+}
+.container .quizz .questions .answers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.container .quizz .questions .answers button {
+  padding: 10px 100px;
+  background-color: gray;
+  color: white;
+  font-weight: 700;
   border: none;
-  background-color: greenyellow;
-  color: black;
-  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
   transition: 0.3s;
 }
-.main-container .inp-div .add:active {
-  color: white;
-  background-color: #ff0000;
-}
-.main-container .inp-div input {
-  width: 92%;
-  padding: 10px;
-}
-.main-container .inp-div label {
-  padding-bottom: 7px;
-}
-
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.main-content .task {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  border-bottom: 1px solid #007820;
-}
-.main-content .task .delete {
-  cursor: pointer;
-}
-.main-content .task .delete img {
-  width: 30px;
-}
-.main-content .task .check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  background-color: white;
+.container .quizz .questions .answers button:hover {
+  background-color: antiquewhite;
   color: black;
 }
-.main-content .task .check input:hover {
+.container .quizz .questions .answers .correct {
+  background-color: #007820 !important;
+}
+.container .quizz .questions .answers .incorrect {
+  background-color: #de1616 !important;
+}
+.container .quizz .questions .answers .disable {
+  background-color: rgba(165, 143, 143, 0.73);
+  cursor: no-drop;
+}
+.container .quizz .questions .answers .disable:hover {
+  background-color: rgba(165, 143, 143, 0.73);
+  cursor: no-drop;
+  color: white;
+}
+.container .quizz .questions .next-btn .next {
+  padding: 10px 100px;
+  background-color: gray;
+  color: white;
+  font-weight: 700;
+  border: none;
   cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  margin-top: 30px;
+  padding: 10px 40px;
+  border-radius: 100px;
+  background-color: #007820;
+  visibility: hidden;
 }
-.main-content .task .check input:checked .check p {
-  text-decoration: underline;
-  color: #007820;
-}
-
-.complete {
-  color: #007820;
-  text-decoration: line-through;
-}
-
-.action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  -moz-column-gap: 12px;
-       column-gap: 12px;
-}
-.action img {
-  width: 32px;
-}
-.action .edit:hover {
-  cursor: pointer;
+.container .quizz .questions .next-btn .next:hover {
+  background-color: antiquewhite;
+  color: black;
 }/*# sourceMappingURL=main.css.map */
