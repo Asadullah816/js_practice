@@ -1583,81 +1583,81 @@
 // =======================================================================
 // =======================================================================
 // =======================================================================
-// const addTask = document.querySelector('.add');
-// const input = document.querySelector('.input');
-// const mainContainer = document.querySelector('.main-content');
+const addTask = document.querySelector('.add');
+const input = document.querySelector('.input');
+const mainContainer = document.querySelector('.main-content');
 // const check = document.querySelector('.check')
-// const taskText = document.querySelector('.para');
-// const task = document.querySelectorAll('task');
-// // const edit = document.querySelector('.edit');
-// let checktask;
-// let val;
-// function taskFun() {
-//     addTask.addEventListener('click', () => {
-//         val = input.value;
-//         if (val == "" || val == " ") {
-//             alert("Please Enter some text");
-//         }
-//         else {
-//             let data = ` <div class="task">
-//                         <div class="check">
-//                             <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
-//                             <p class="para">${val}</p>
-//                         </div>
-//                         <div class="action">
-//                             <div class="delete" onclick="taskDelete(this)">
-//                                 <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
-//                             </div>
-//                             <div class="edit" onclick="edit(this)">
-//                                 <img src="assets/images/edit.png" alt="">
-//                             </div>
-//                         </div>
-//                     </div>`
-//             mainContainer.innerHTML += data;
-//             input.value = ""
-//         }
-//         save();
-//     })
-// }
-// taskFun();
-// taskDelete = (e) => {
-//     e.closest('.task').remove();
-//     save();
-// }
-// function edit(e){
-//     editData =  e.closest(".task").querySelector('p').textContent;
-//     input.value = editData;
-//     e.closest(".task").remove();
-//     save();
-//     // e.closest('task').remove();
-//     // save();
-// }
-// function complete(e) {
-//     if (e.checked) {
-//         let data = e.closest('.task');
-//         data.classList.add('complete');
-//         e.setItem = "changed";
-//         e.setAttribute('checked',true);
-//         save();
-//     }
-//     else {
-//         let data = e.closest('.task');
-//         data.classList.remove('complete');
-//         e.removeAttribute('checked', false);
-//         save();
-//     }
-// }
-// let saveData = "data"
-// function save() {
-//     localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
-// }
-// function load() {
-//     let data = JSON.parse(localStorage.getItem(saveData));
-//     if (data) {
-//         mainContainer.innerHTML = data;
-//     }
-// }
-// load();
+const taskText = document.querySelector('.para');
+const task = document.querySelectorAll('task');
+// const edit = document.querySelector('.edit');
+let checktask;
+let val;
+function taskFun() {
+   addTask.addEventListener('click', () => {
+      val = input.value;
+      if (val == "" || val == " ") {
+         alert("Please Enter some text");
+      }
+      else {
+         let data = ` <div class="task">
+                        <div class="check">
+                            <input type="checkbox" ce onchange="complete(this)" name="complete" class="check">
+                            <p class="para">${val}</p>
+                        </div>
+                        <div class="action">
+                            <div class="delete" onclick="taskDelete(this)">
+                                <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=000000" alt="">
+                            </div>
+                            <div class="edit" onclick="edit(this)">
+                                <img src="assets/images/edit.png" alt="">
+                            </div>
+                        </div>
+                    </div>`
+         mainContainer.innerHTML += data;
+         input.value = ""
+      }
+      save();
+   })
+}
+taskFun();
+taskDelete = (e) => {
+   e.closest('.task').remove();
+   save();
+}
+function edit(e) {
+   editData = e.closest(".task").querySelector('p').textContent;
+   input.value = editData;
+   e.closest(".task").remove();
+   save();
+   // e.closest('task').remove();
+   // save();
+}
+function complete(e) {
+   if (e.checked) {
+      let data = e.closest('.task');
+      data.classList.add('complete');
+      e.setItem = "changed";
+      e.setAttribute('checked', true);
+      save();
+   }
+   else {
+      let data = e.closest('.task');
+      data.classList.remove('complete');
+      e.removeAttribute('checked', false);
+      save();
+   }
+}
+let saveData = "data"
+function save() {
+   localStorage.setItem(saveData, JSON.stringify(mainContainer.innerHTML));
+}
+function load() {
+   let data = JSON.parse(localStorage.getItem(saveData));
+   if (data) {
+      mainContainer.innerHTML = data;
+   }
+}
+load();
 // =================================================================================
 // =================================================================================
 // =================================================================================
