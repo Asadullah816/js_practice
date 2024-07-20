@@ -313,6 +313,18 @@ h1 {
     /* flex-direction: column; */
 }
 
+@media(max-width:520px) {
+    .main-container {
+        width: 320px !important;
+    }
+}
+
+@media(max-width:400px) {
+    .main-container {
+        width: 290px !important;
+    }
+}
+
 /* .input {
     padding: 10px 20px;
     border-radius: 100px;
